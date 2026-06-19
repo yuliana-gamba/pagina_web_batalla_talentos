@@ -1,0 +1,293 @@
+/* ===== Variables y Reset ===== */
+:root {
+    /* Nueva Paleta Vibrante: Energía Creativa */
+    --primaryColor: #1e264e;      /* Violeta eléctrico */
+    --secondaryColor: #fd79a8;    /* Rosa neón */
+    --accentColor: #00cec9;       /* Turquesa brillante */
+    --lightBg: #e0ecdb;          /* Fondo crema suave */
+    --textColor: #2d3436;         /* Gris oscuro para legibilidad */
+    
+    --fontMain: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --fontSerif: 'Georgia', 'Times New Roman', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fontMain);
+    color: var(--textColor);
+    background-color: var(--lightBg); /* Aplicado el fondo crema */
+    line-height: 1.6;
+}
+
+/* ===== Navegación ===== */
+nav {
+    background-color: var(--primaryColor);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.siteLogo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+ul#navLinks {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+ul#navLinks a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+ul#navLinks a:hover {
+    color: var(--secondaryColor);
+}
+
+.menuToggle {
+    display: none;
+    background: var(--secondaryColor);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* ===== Estructura de Secciones ===== */
+.sectionContainer {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bgLight {
+    background-color: var(--lightBg);
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    color: var(--primaryColor);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--primaryColor);
+    border-bottom: 2px solid var(--secondaryColor); /* Rosa neón */
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* ==================================================== */
+/* ===== DISEÑO TARJETA DE INICIO (INDEX) ============= */
+/* ==================================================== */
+
+.heroCard {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem;
+    gap: 4rem;
+    margin: 2rem auto;
+}
+
+.heroText {
+    flex: 1;
+}
+
+.heroTitle {
+    text-align: left;
+    border-bottom: none;
+    font-family: var(--fontSerif);
+    font-size: 3rem;
+    color: var(--primaryColor);
+    margin-bottom: 1rem;
+    padding-bottom: 0;
+}
+
+.heroText p {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.heroDivider {
+    border: none;
+    border-top: 1px solid var(--accentColor); /* Turquesa */
+    margin: 1.5rem 0;
+}
+
+.heroImageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.heroImage {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================================================== */
+/* ===== Grillas y Tarjetas (Organización) ============ */
+/* ==================================================== */
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.siteCard {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--accentColor); /* Turquesa */
+}
+
+.siteCard h3 {
+    font-family: var(--fontSerif);
+    font-size: 1.5rem;
+    color: var(--primaryColor);
+    margin-bottom: 1rem;
+    border-bottom: none;
+}
+
+.siteCard h4 {
+    color: var(--primaryColor);
+    margin-bottom: 0.5rem;
+}
+
+.siteCard p {
+    color: #444;
+}
+
+.siteCard ol, .siteCard ul {
+    padding-left: 1.2rem;
+    color: #444;
+}
+
+/* ===== Galería de Fotos Uniformes ===== */
+.multimediaSection {
+    margin-top: 3rem;
+}
+
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+.galleryPhoto {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+}
+
+.galleryPhoto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+/* ===== Tabla del Glosario ===== */
+.tableResponsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--primaryColor);
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* ===== Footer ===== */
+.siteFooter {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primaryColor);
+    color: white;
+    margin-top: 4rem;
+}
+
+/* ===== Responsive Design (Celulares) ===== */
+@media (max-width: 768px) {
+    .heroCard {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+    
+    .heroImage {
+        height: auto;
+        max-height: 250px;
+    }
+
+    ul#navLinks {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--primaryColor);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem 0;
+        text-align: center;
+    }
+    
+    ul#navLinks.active {
+        display: flex;
+    }
+    
+    .menuToggle {
+        display: block;
+    }
+}
